@@ -1,0 +1,77 @@
+@extends('layouts.app')
+
+@section('content')
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.container {
+            padding-left:5%;
+            padding-right:5%;
+            padding-top:5%;
+            padding-bottom:5%;
+        }
+
+        h2 {display:inline;}
+		img {
+            width:20%;
+            height:20%;
+            float:right;
+        }
+		.eventinfo {
+            margin-top:5%;
+            margin-bottom:10%;
+        }
+
+		.hyperlink {
+            padding-top:1%;
+            float:right;
+            padding-right:
+            5%;color:black;
+            font-size:20px;
+        }
+
+		#creativeeducation {
+            background-color:black;
+            color:white;
+            border-radius:5px;
+            padding:10px 20px;
+            position:relative;
+            bottom:20%;
+            left:45%;
+        }
+	</style>
+</head>
+<body>
+	<a class="hyperlink" href="/youth_service"><b>Back</b></a>
+	<div class="container">
+
+		<div class="event">
+			<h2>Creative Education</h2>
+			<img src="creativeeducation.jpg"><br>
+			<div class="eventinfo">
+				<b>Date: 28<sup>th</sup>April,2021<br>
+				Time: 15:00pm - 18:00pm<br>
+				Venue: C Hall<br>
+				Guest: Ho Tai Man</b><br>
+
+				<p style="margin-top:10%;"><h3>Introduction:</h3><br>
+				This talk aims to strengthen teenager's thinking ability. We had invited rich experienced Philosophy lecturer Ho Tai Man as guest speaker. We hope to inspire them to think out of the box.</p>
+
+				<form action="join_youth_service.php" method="post">
+					<input type="submit" name="creativeeducation" id="creativeeducation" value="Join Now!">
+				</form>
+			<?php
+
+				if(isset($_SESSION['creativeeducation'])){
+					echo $_SESSION['creativeeducation'];
+			}
+
+			?>
+			</div>
+
+	</div>
+</body>
+</html>
+
+@endsection
